@@ -22,7 +22,7 @@ namespace GameStore.Api.Data
 				Name = "Call Of Duty : Modern Warfare 2",
 				Description = "First Person Shooter developed by Activision.",
 				ImageURL = "",
-				Price = 59.99,
+				Price = 59.99M,
 				Qty = 100,
 				CategoryId = 1
 
@@ -33,7 +33,7 @@ namespace GameStore.Api.Data
 				Name = "Phasmophobia",
 				Description = "Single or multiplayer ghost hunting game that'll scare the pants off of you.",
 				ImageURL = "",
-				Price = 29.99,
+				Price = 29.99M,
 				Qty = 45,
 				CategoryId = 1
 
@@ -44,7 +44,7 @@ namespace GameStore.Api.Data
 				Name = "The Legend Of Zelda : Breath Of The Wild",
 				Description = "A breathtaking open world zelda adventure you have never experienced before.",
 				ImageURL = "",
-				Price = 19.99,
+				Price = 19.99M,
 				Qty = 30,
 				CategoryId = 1
 
@@ -55,7 +55,7 @@ namespace GameStore.Api.Data
 				Name = "Dead Space 2",
 				Description = "Survival horror set in space where no one can hear your screams.",
 				ImageURL = "",
-				Price = 29.99,
+				Price = 29.99M,
 				Qty = 60,
 				CategoryId = 1
 
@@ -66,7 +66,7 @@ namespace GameStore.Api.Data
 				Name = "Elden Ring",
 				Description = "From software's latest and greates epic to challenge the wits and patients of all players.",
 				ImageURL = "",
-				Price = 59.99,
+				Price = 59.99M,
 				Qty = 85,
 				CategoryId = 1
 
@@ -78,7 +78,7 @@ namespace GameStore.Api.Data
 				Name = "Xbox Series X",
 				Description = "The latest console from Microsoft.",
 				ImageURL = "",
-				Price = 499.99,
+				Price = 499.99M,
 				Qty = 120,
 				CategoryId = 3
 
@@ -89,7 +89,7 @@ namespace GameStore.Api.Data
 				Name = "Play Station 5",
 				Description = "The latest console from Sony.",
 				ImageURL = "",
-				Price = 499.99,
+				Price = 499.99M,
 				Qty = 200,
 				CategoryId = 3
 
@@ -100,7 +100,7 @@ namespace GameStore.Api.Data
 				Name = "Nintendo Switch",
 				Description = "The latest console from Nintendo",
 				ImageURL = "",
-				Price = 299.99,
+				Price = 299.99M,
 				Qty = 200,
 				CategoryId = 3
 
@@ -111,7 +111,7 @@ namespace GameStore.Api.Data
 				Name = "Nintendo 64",
 				Description = "Classic console provided by Nintendo.",
 				ImageURL = "",
-				Price = 99.99,
+				Price = 99.99M,
 				Qty = 20,
 				CategoryId = 3
 
@@ -122,7 +122,7 @@ namespace GameStore.Api.Data
 				Name = "Sega Dreamcast",
 				Description = "Reveloutionary product for its time provided by SEGA.",
 				ImageURL = "",
-				Price = 99.99,
+				Price = 99.99M,
 				Qty = 15,
 				CategoryId = 3
 
@@ -133,7 +133,7 @@ namespace GameStore.Api.Data
 				Name = "Nintendo Gameboy Advanced",
 				Description = "Provided by Nintendo",
 				ImageURL = "",
-				Price = 49.99,
+				Price = 49.99M,
 				Qty = 60,
 				CategoryId = 3
 			});
@@ -144,7 +144,7 @@ namespace GameStore.Api.Data
 				Name = "Izuku Midoria Figure",
 				Description = "Izuku Midoria from the popular anime 'My Hero Academia'.",
 				ImageURL = "",
-				Price = 49.99,
+				Price = 49.99M,
 				Qty = 212,
 				CategoryId = 2
 			});
@@ -155,7 +155,7 @@ namespace GameStore.Api.Data
 				Name = "Dragonball Z Heat Activated Mug",
 				Description = "Pour your coffee in and watch the Z fighters come to life.",
 				ImageURL = "",
-				Price = 19.99,
+				Price = 19.99M,
 				Qty = 112,
 				CategoryId = 2
 			});
@@ -165,7 +165,7 @@ namespace GameStore.Api.Data
 				Name = "Naruto Uzumaki w/ Kurama Figure",
 				Description = "Naruto Uzumaki from the popular anime 'Naruto : Shippuden' with the nine tailed fox.",
 				ImageURL = "",
-				Price = 49.99,
+				Price = 49.99M,
 				Qty = 90,
 				CategoryId = 2
 			});
@@ -175,7 +175,7 @@ namespace GameStore.Api.Data
 				Name = "Asta Jumbo Fig Pin",
 				Description = "Jumbo fig pin from Funko of Asta and the demon destroyer sword from the popular anime 'Black Clover'",
 				ImageURL = "",
-				Price = 12.99,
+				Price = 12.99M,
 				Qty = 95,
 				CategoryId = 2
 			});
@@ -185,7 +185,7 @@ namespace GameStore.Api.Data
 				Name = "Himiko Toga Figure",
 				Description = "Figure of Himiko Toga from the popular anime 'My Hero Academia'.",
 				ImageURL = "",
-				Price = 24.99,
+				Price = 24.99M,
 				Qty = 100,
 				CategoryId = 2
 			});
@@ -195,7 +195,7 @@ namespace GameStore.Api.Data
 				Name = "Charmander Hat",
 				Description = "Wear this wonderful hat that sparks imagination as you adventure with the best starter pokemon from popular anime 'Pokemon'.",
 				ImageURL = "",
-				Price = 19.99,
+				Price = 19.99M,
 				Qty = 73,
 				CategoryId = 2
 			});
@@ -206,7 +206,7 @@ namespace GameStore.Api.Data
 				Name = "Power Adapter (Xbox Series X)",
 				Description = "Replacement power source for the Xbox Series X.",
 				ImageURL = "",
-				Price = 19.99,
+				Price = 19.99M,
 				Qty = 50,
 				CategoryId = 4
 			});
@@ -216,7 +216,7 @@ namespace GameStore.Api.Data
 				Name = "Power Adapter (Playstation 5)",
 				Description = "Replacement power source for the Playstation 5.",
 				ImageURL = "",
-				Price = 19.99,
+				Price = 19.99M,
 				Qty = 60,
 				CategoryId = 4
 			});
@@ -226,7 +226,7 @@ namespace GameStore.Api.Data
 				Name = "Pro Controller (series 2) Xbox Series X",
 				Description = "Take the Competition to the opponents with this elite controller.",
 				ImageURL = "",
-				Price = 149.99,
+				Price = 149.99M,
 				Qty = 70,
 				CategoryId = 4
 			});
@@ -236,7 +236,7 @@ namespace GameStore.Api.Data
 				Name = "Joy Cons (red and blue) Nintendo Switch",
 				Description = "Set of two joy cons for the Nintendo Switch.",
 				ImageURL = "",
-				Price = 79.99,
+				Price = 79.99M,
 				Qty = 120,
 				CategoryId = 4
 			});
@@ -246,7 +246,7 @@ namespace GameStore.Api.Data
 				Name = "Nintendo Switch Carrying Case (Legend Of Zelda)",
 				Description = "Fall into the world of zelda with this carrying case for your switch.",
 				ImageURL = "",
-				Price = 34.99,
+				Price = 34.99M,
 				Qty = 100,
 				CategoryId = 4
 			});
@@ -256,7 +256,7 @@ namespace GameStore.Api.Data
 				Name = "Steele Series Arctis 9X",
 				Description = "Put yourself in the game with these headphone to hear the competition better than ever.",
 				ImageURL = "",
-				Price = 149.99,
+				Price = 149.99M,
 				Qty = 150,
 				CategoryId = 4
 			});
