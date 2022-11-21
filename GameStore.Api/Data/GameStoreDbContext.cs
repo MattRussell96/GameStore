@@ -310,5 +310,11 @@ namespace GameStore.Api.Data
 				Name = "Accessories"
 			});
 		}
+
+		public DbSet<Cart> Carts { get; set; }
+		public DbSet<CartItem> CartItems { get; set; }
+		public DbSet<Product> Products { get; set; }
+		public DbSet<ProductCategory> ProductCategories { get; set; }
+		public DbSet<User> Users { get; set; }
     }
 }
