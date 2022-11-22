@@ -2,6 +2,7 @@ using GameStore.Api.Data;
 using GameStore.Api.Repositories;
 using GameStore.Api.Repositories.Contracts;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Net.Http.Headers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +27,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors(policy =>
+    policy.WithOrigins("http://localhost:7172", "https://localhost:7172")
+    .AllowAnyMethod()
+    .WithHeaders(HeaderNames.ContentType)
+
+);
 
 app.UseHttpsRedirection();
 
