@@ -1,4 +1,6 @@
 using GameStore.Api.Data;
+using GameStore.Api.Repositories;
+using GameStore.Api.Repositories.Contracts;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +15,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContextPool<GameStoreDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("GameStoreConnection"))
 );
+
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 var app = builder.Build();
 

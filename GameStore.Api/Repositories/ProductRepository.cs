@@ -1,13 +1,23 @@
-﻿using GameStore.Api.Entities;
+﻿using GameStore.Api.Data;
+using GameStore.Api.Entities;
 using GameStore.Api.Repositories.Contracts;
+using Microsoft.EntityFrameworkCore;
 
 namespace GameStore.Api.Repositories
 {
     public class ProductRepository : IProductRepository
     {
-        public Task<IEnumerable<ProductCategory>> GetCategories()
+        private readonly GameStoreDbContext gameStoreDbContext;
+        public ProductRepository(GameStoreDbContext gameStoreDbContext)
         {
-            throw new NotImplementedException();
+            this.gameStoreDbContext = gameStoreDbContext;
+        }
+        
+        public async Task<IEnumerable<ProductCategory>> GetCategories()
+        {
+            var categories = await this.gameStoreDbContext.ProductCategories.ToListAsync();
+
+            return categories;
         }
 
         public Task<ProductCategory> GetCategory(int id)
@@ -20,9 +30,11 @@ namespace GameStore.Api.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Product>> GetItems()
+        public async Task<IEnumerable<Product>> GetItems()
         {
-            throw new NotImplementedException();
+            var products = await this.gameStoreDbContext.Products.ToListAsync();
+
+            return products;
         }
     }
 }
