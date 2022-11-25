@@ -15,16 +15,16 @@ else
     @if (productCount > 0)
     {
 
-        var groupPoductsByCategory = from product in Products
-                                     group product by product.CategoryId into prdByCatGroup
-                                     orderby prdByCatGroup.Key
-                                     select prdByCatGroup;
+        var groupedPoductsByCategory = from product in Products
+                                     group product by product.CategoryId into prodByCatGroup
+                                     orderby prodByCatGroup.Key
+                                     select prodByCatGroup;
 
 
-                @foreach (var prodGroup in groupPoductsByCategory)
+                @foreach (var prodGroup in groupedPoductsByCategory)
             {
                 
-                <h4>@prodGroup.FirstOrDefault(pg => pg.CategoryId == prodGroup.Key)</h4>
+                <h2>@prodGroup.FirstOrDefault(pg => pg.CategoryId == prodGroup.Key).CategoryName</h2>
             
                 <div class="row mt-3">
                 
