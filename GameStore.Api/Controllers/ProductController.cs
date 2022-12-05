@@ -31,9 +31,9 @@ namespace GameStore.Api.Controllers
                 }
                 else
                 {
-                    var productDto = products.ConvertToDto(productCategories);
+                    var productDtos = products.ConvertToDto(productCategories);
 
-                    return Ok(productDto);
+                    return Ok(productDtos);
                 }
             }
             catch (Exception)

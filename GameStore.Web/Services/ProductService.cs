@@ -18,7 +18,7 @@ namespace GameStore.Web.Services
             try
             {
                 var response = await httpClient.GetAsync($"api/Product/{id}");
-
+                 
                 if (response.IsSuccessStatusCode)
                 {
                     

@@ -8,6 +8,7 @@ namespace GameStore.Web.Pages
     {
         [Parameter]
         public int Id { get; set; }
+        [Inject]
         public IProductService ProductService { get; set; }
         public ProductDto Product { get; set; }
         public string ErrorMessage { get; set; }
