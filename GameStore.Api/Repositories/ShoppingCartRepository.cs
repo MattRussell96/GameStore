@@ -60,7 +60,7 @@ namespace GameStore.Api.Repositories
                           {
                               Id = cartItem.Id,
                               ProductId = cartItem.ProductId,
-                              Qty = cartItem.Qty
+                              Qty = cartItem.Qty,
                               CartId = cartItem.CartId
                           }).SingleOrDefaultAsync();
         }
