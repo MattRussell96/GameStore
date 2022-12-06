@@ -65,12 +65,12 @@ namespace GameStore.Api.Repositories
                           }).SingleOrDefaultAsync();
         }
 
-        public async Task<IEnumerable<CartItem>> GetItems(int UserId)
+        public async Task<IEnumerable<CartItem>> GetItems(int userId)
         {
             return await (from cart in this.gameStoreDbContext.Carts
                           join cartItem in this.gameStoreDbContext.CartItems
                           on cart.Id equals cartItem.CartId
-                          where cart.UserId == UserId
+                          where cart.UserId == userId
                           select new CartItem
                           {
                               Id = cartItem.Id,

@@ -18,6 +18,7 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("GameStoreConnect
 );
 
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IShoppingCartRepository, ShoppingCartRepository>();
 
 var app = builder.Build();
 

@@ -10,6 +10,8 @@ namespace GameStore.Web.Pages
         public int Id { get; set; }
         [Inject]
         public IProductService ProductService { get; set; }
+        [Inject]
+        public IShoppingCartService ShoppingCartService { get; set; }
         public ProductDto Product { get; set; }
         public string ErrorMessage { get; set; }
         protected override async Task OnInitializedAsync()
@@ -25,6 +27,18 @@ namespace GameStore.Web.Pages
 
                 ErrorMessage = ex.Message;
 
+            }
+        }
+
+        protected async Task AddToCart_Click(CartItemToAddDto cartItemToAddDto)
+        {
+            try
+            {
+                var cartItem = await ShoppingCartService.AddItem(cartItemToAddDto);
+            }
+            catch (Exception)
+            {
+                // Log Exception
             }
         }
     }
