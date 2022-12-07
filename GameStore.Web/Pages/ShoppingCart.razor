@@ -28,7 +28,12 @@ else
                     <div class="col-md-8">
                         <h5>@items.ProductName</h5>
                         <div class="mb-4">@items.ProductDescription</div>
-                        <span>Price: <b>@items.Price.ToString("C")</b></span>
+                            <span>Price: <b>@items.Price.ToString("C")</b>
+                            <input type="number" @bind="@items.Qty" />
+                            <button class="btn btn-info btn-sm"
+                                @onclick="(() => UpdateQtyCartItem_Click(items.Id, items.Qty))"
+                            >Update Qty</button>
+                        </span>
                         <div>
                             <button @onclick ="(() => DeleteCartItem_Click(items.Id))"
                              class="btn btn-danger sm">Remove</button>
