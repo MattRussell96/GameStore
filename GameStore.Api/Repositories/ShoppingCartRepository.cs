@@ -45,9 +45,15 @@ namespace GameStore.Api.Repositories
         }
             
 
-        public Task<CartItem> DeleteItem(int id)
+        public async Task<CartItem> DeleteItem(int id)
         {
-            throw new NotImplementedException();
+            var item = await this.gameStoreDbContext.CartItems.FindAsync(id);
+            if (item != null)
+            {
+                this.gameStoreDbContext.CartItems.Remove(item);
+                await this.gameStoreDbContext.SaveChangesAsync();
+            }
+            return item;
         }
 
         public async Task<CartItem> GetItem(int id)
