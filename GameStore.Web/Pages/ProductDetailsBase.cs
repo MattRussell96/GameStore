@@ -12,6 +12,8 @@ namespace GameStore.Web.Pages
         public IProductService ProductService { get; set; }
         [Inject]
         public IShoppingCartService ShoppingCartService { get; set; }
+        [Inject]
+        public NavigationManager NavigationManager { get; set; }
         public ProductDto Product { get; set; }
         public string ErrorMessage { get; set; }
         protected override async Task OnInitializedAsync()
@@ -34,7 +36,8 @@ namespace GameStore.Web.Pages
         {
             try
             {
-                var cartItem = await ShoppingCartService.AddItem(cartItemToAddDto);
+                var cartItemDto = await ShoppingCartService.AddItem(cartItemToAddDto);
+                NavigationManager.NavigateTo("/ShoppingCart");
             }
             catch (Exception)
             {
