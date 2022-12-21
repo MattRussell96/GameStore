@@ -1,12 +1,15 @@
 ﻿using GameStore.Models.Dtos;
 using GameStore.Web.Services.Contracts;
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 using System.Net.Http.Headers;
 
 namespace GameStore.Web.Pages
 {
     public class ShoppingCartBase : ComponentBase
     {
+        [Inject]
+        public IJSRuntime Js { get; set; }
         [Inject]
         public IShoppingCartService ShoppingCartService { get; set; }
         public List<CartItemDto> ShoppingCartItems { get; set; }
@@ -28,6 +31,7 @@ namespace GameStore.Web.Pages
             }
         }
 
+
         protected async Task UpdateQtyCartItem_Click(int id, int qty)
         {
             try
@@ -45,6 +49,8 @@ namespace GameStore.Web.Pages
 
                     CalculateCartSummaryTotals();
 
+                    await MakeUpdateQtyButtonVisible(id, false);
+
                 }
                 else
                 {
@@ -61,6 +67,16 @@ namespace GameStore.Web.Pages
 
                 throw;
             }
+        }
+        
+        protected async Task UpdateQty_Input(int id)
+        {
+            await MakeUpdateQtyButtonVisible(id, true);
+        }
+
+        private async Task MakeUpdateQtyButtonVisible(int id, bool visible)
+        {
+            await Js.InvokeVoidAsync("MakeUpdateQtyButtonVisible", id, visible);
         }
 
         protected async Task DeleteCartItem_Click(int id)
