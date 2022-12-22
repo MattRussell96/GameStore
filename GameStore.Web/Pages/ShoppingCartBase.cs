@@ -21,8 +21,8 @@ namespace GameStore.Web.Pages
         {
             try
             {
-                ShoppingCartItems = await ShoppingCartService.GetItems(HardCoded.UserId); 
-                CalculateCartSummaryTotals();
+                ShoppingCartItems = await ShoppingCartService.GetItems(HardCoded.UserId);
+                CartChanged();
             }
             catch (Exception ex)
             {
@@ -47,7 +47,7 @@ namespace GameStore.Web.Pages
                     var returnUpdateItemDto = await this.ShoppingCartService.UpdateQty(updateItemDto);
                     UpdateItemTotalPrice(returnUpdateItemDto);
 
-                    CalculateCartSummaryTotals();
+                    CartChanged();
 
                     await MakeUpdateQtyButtonVisible(id, false);
 
@@ -84,7 +84,7 @@ namespace GameStore.Web.Pages
             var cartItemDto = await ShoppingCartService.DeleteItem(id);
             RemoveCartItem(id);
 
-            CalculateCartSummaryTotals();
+            CartChanged();
         }
 
         private void UpdateItemTotalPrice(CartItemDto cartItemDto)
@@ -122,6 +122,12 @@ namespace GameStore.Web.Pages
         {
             var cartItemDto = GetCartItem(id);
             ShoppingCartItems.Remove(cartItemDto);
+        }
+
+        private void CartChanged()
+        {
+            CalculateCartSummaryTotals();
+            ShoppingCartService.RaiseEventOnShoppingCartChange(TotalQuantity);
         }
     }
 }
